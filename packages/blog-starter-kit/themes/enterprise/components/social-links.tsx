@@ -13,7 +13,7 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 					isSidebar ? 'justify-start' : 'justify-end'
 				}`}
 			>
-				{hasSocialLinks && (
+				{/* {hasSocialLinks && (
 					<>
 						{publication.links?.twitter && (
 							<a
@@ -60,9 +60,9 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 							</a>
 						)}
 					</>
-				)}
+				)} */}
 
-				<Link
+				{/* <Link
 					prefetch={false}
 					href={`/rss.xml`}
 					target="_blank"
@@ -71,7 +71,7 @@ export const SocialLinks = ({ isSidebar }: { isSidebar?: boolean }) => {
 					className="flex flex-row items-center justify-center rounded-full border border-slate-200 p-2 hover:bg-slate-100 dark:border-neutral-800 dark:hover:bg-neutral-600"
 				>
 					<RssSVG className="h-5 w-5 stroke-current" />
-				</Link>
+				</Link> */}
 			</div>
 		</>
 	);
