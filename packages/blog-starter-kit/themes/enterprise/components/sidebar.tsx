@@ -6,7 +6,6 @@ import { Button } from './button';
 import { useAppContext } from './contexts/appContext';
 import CloseSVG from './icons/svgs/CloseSVG';
 import { PublicationLogo } from './publication-logo';
-import { SocialLinks } from './social-links';
 
 type Props = {
   toggleSidebar: () => void;
@@ -27,9 +26,9 @@ function PublicationSidebar(props: Props) {
     <DialogPrimitive.Root open>
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay
-          className={fixed inset-0 z-50 bg-slate-900 opacity-0 transition-opacity duration-300 ease-out ${
+          className={`fixed inset-0 z-50 bg-slate-900 opacity-0 transition-opacity duration-300 ease-out ${
             isMounted && 'opacity-50'
-          }}
+          }`}
         />
         <DialogPrimitive.Content
           onEscapeKeyDown={() => {
@@ -38,9 +37,9 @@ function PublicationSidebar(props: Props) {
           onPointerDownOutside={() => {
             toggleSidebar();
           }}
-          className={${
+          className={`${
             !isMounted ? '-translate-x-96' : 'translate-x-0'
-          } fixed bottom-0 left-0 top-0 z-50 flex w-80 transform flex-col bg-white shadow-2xl duration-300 ease-out dark:border-neutral-800 dark:bg-neutral-950}
+          } fixed bottom-0 left-0 top-0 z-50 flex w-80 transform flex-col bg-white shadow-2xl duration-300 ease-out dark:border-neutral-800 dark:bg-neutral-950`}
         >
           <div className="blog-sidebar-header w-full shrink-0 py-6">
             <div className="flex items-center justify-between pl-8 pr-4">
@@ -83,10 +82,6 @@ function PublicationSidebar(props: Props) {
                 </li>
               </ul>
             </section>
-
-            {hasSocialLinks && (
-              <SocialLinks isSidebar />
-            )}
           </div>
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>
