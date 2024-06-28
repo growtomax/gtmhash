@@ -83,7 +83,10 @@ function PublicationSidebar(props: Props) {
                 </li>
               </ul>
             </section>
-            
+
+            {hasSocialLinks && (
+              <SocialLinks isSidebar />
+            )}
           </div>
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>
