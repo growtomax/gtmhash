@@ -12,7 +12,7 @@ function AboutAuthor() {
 
   return (
     <div className="mx-auto w-full px-5 md:max-w-screen-md mb-5 mt-10 flex flex-col gap-16">
-      <div className="flex-1 px-2">
+      {/*<div className="flex-1 px-2">
         <div className="flex flex-col flex-wrap items-start md:flex-nowrap">
           <h3 className="mb-4 w-full border-b-1-1/2 pb-2 text-base font-medium tracking-wider text-slate-500 dark:border-slate-800 dark:text-slate-400 ">
             Written by
@@ -28,7 +28,7 @@ function AboutAuthor() {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
