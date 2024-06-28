@@ -1,24 +1,17 @@
-
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { PublicationNavbarItem } from '../generated/graphql';
-import { Button } from './button';
 import { useAppContext } from './contexts/appContext';
-import CloseSVG from './icons/svgs/CloseSVG';
 import { PublicationLogo } from './publication-logo';
-import { SocialLinks } from './social-links';
 
 type Props = {
   toggleSidebar: () => void;
-  navbarItems: (PublicationNavbarItem & { url: string })[];
 };
 
 function PublicationSidebar(props: Props) {
-  const { toggleSidebar, navbarItems } = props;
+  const { toggleSidebar } = props;
   const [isMounted, setIsMounted] = useState(false);
   const { publication } = useAppContext();
-  const hasSocialLinks = !Object.values(publication.links!).every((val) => val === '');
 
   useEffect(() => {
     setIsMounted(true);
@@ -50,15 +43,14 @@ function PublicationSidebar(props: Props) {
               </div>
 
               <DialogPrimitive.Close asChild>
-                <Button
-                  type="outline"
-                  label=""
-                  icon={<CloseSVG className="h-5 w-5 fill-current" />}
+                <button
                   className="rounded-xl !border-transparent !px-3 !py-2 hover:bg-neutral-800 dark:text-white"
                   onClick={() => {
                     toggleSidebar();
                   }}
-                />
+                >
+                  Close
+                </button>
               </DialogPrimitive.Close>
             </div>
           </div>
@@ -84,10 +76,6 @@ function PublicationSidebar(props: Props) {
                 </li>
               </ul>
             </section>
-
-            {hasSocialLinks && (
-              <SocialLinks isSidebar />
-            )}
           </div>
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>
