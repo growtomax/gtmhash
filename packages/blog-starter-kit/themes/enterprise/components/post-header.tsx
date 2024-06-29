@@ -56,7 +56,7 @@ export const PostHeader = ({ title, coverImage, date, author, readTimeInMinutes 
                   className="h-full w-full object-cover"
                 />
               ) : (
-                <Avatar name={coAuthor.name} />
+                <Avatar name={coAuthor.name} username={coAuthor.username} picture={coAuthor.profilePicture || ''} size="medium" />
               )}
             </div>
           ))}
