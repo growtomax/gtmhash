@@ -49,11 +49,15 @@ export const PostHeader = ({ title, coverImage, date, author, readTimeInMinutes 
                   : 'h-8 w-8 border-2 border-slate-100 dark:border-slate-800 md:h-9 md:w-9 [&:not(:first-of-type)]:-ml-3 md:[&:not(:first-of-type)]:-ml-6',
               )}
             >
-              <img
-                src={resizeImage(coAuthor.profilePicture, { w: 200, h: 200 })}
-                alt={coAuthor.name}
-                className="h-full w-full object-cover"
-              />
+              {coAuthor.profilePicture ? (
+                <img
+                  src={resizeImage(coAuthor.profilePicture, { w: 200, h: 200 })}
+                  alt={coAuthor.name}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <Avatar name={coAuthor.name} />
+              )}
             </div>
           ))}
           {post.coAuthors && post.coAuthors.length > 0 && (
